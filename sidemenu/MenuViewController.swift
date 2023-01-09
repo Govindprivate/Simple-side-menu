@@ -59,12 +59,11 @@ class MenuViewController: UIViewController {
     }
     
 }
-// MARK: - Required method's ...
+// MARK: - UITableViewDelegate & UITableViewDataSource method's ...
 extension MenuViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         2
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableViewObject.dequeueReusableCell(withIdentifier: "MenuTableViewCell", for: indexPath) as! MenuTableViewCell
         if indexPath.row == 0{
@@ -74,7 +73,6 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource{
         }
         return cell
     }
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         moveOut()
         if indexPath.row == 0{
